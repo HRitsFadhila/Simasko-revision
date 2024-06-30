@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Role;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Jetstream\HasProfilePhoto;
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +15,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, HasProfilePhoto, Notifiable, TwoFactorAuthenticatable, HasRoles;
 
-    protected $guarded = [];
+    // Jika Anda menggunakan $fillable
     protected $fillable = [
         'name',
         'username',
@@ -25,6 +24,9 @@ class User extends Authenticatable
         'id_role',
         'path_image',
     ];
+
+    // Atau, jika Anda menggunakan $guarded
+    // protected $guarded = [];
 
     protected $hidden = [
         'password',
@@ -42,7 +44,6 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-
     public function role(): BelongsTo
     {
         return $this->belongsTo(Role::class, 'id_role');
@@ -50,10 +51,10 @@ class User extends Authenticatable
 
     public function is_admin()
     {
-    return $this->role_id === 1;
+        return $this->role_id === 1;
     }
 
-    public function hasRole ($role)
+    public function hasRole($role)
     {
         return $this->role->name == $role;
     }

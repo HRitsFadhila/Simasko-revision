@@ -38,7 +38,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $path = request()->file('path_image')->store('user', 'public');
             $input['path_image'] = $path;
         } else {
-            $input['path_image'] = $user->path_image;
+            unset($input['path_image']); // Don't update the path_image field if no new image is uploaded
         }
 
         // Encrypt password if it is set

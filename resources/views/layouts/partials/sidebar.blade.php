@@ -9,13 +9,17 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-              <img src="{{ auth()->user()->path_image ? asset('storage/' . auth()->user()->path_image) : asset('images/default-profile.png') }}" class="img-circle elevation-2 rounded-circle" style="width: 35px; height: 35px;">
-            </div>
-            <div class="info">
-                <a href="{{ route('profile.show') }}" class="d-block">{{ auth()->user()->name }}</a>
-            </div>
+        <div class="image">
+            @php
+                $imagePath = auth()->user()->path_image ? asset('storage/' . auth()->user()->path_image) : asset('images/default-profile.png');
+            @endphp
+            <img src="{{ $imagePath }}" class="img-circle elevation-2 rounded-circle" style="width: 35px; height: 35px;">
         </div>
+        <div class="info">
+            <a href="{{ route('profile.show') }}" class="d-block">{{ auth()->user()->name }}</a>
+        </div>
+    </div>
+    
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
