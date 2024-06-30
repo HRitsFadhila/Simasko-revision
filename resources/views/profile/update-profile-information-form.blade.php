@@ -12,7 +12,7 @@
                     <div class="form-group mt-3">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="path_image" name="path_image" onchange="preview('.preview-path_image', this.files[0])">
-                            <label class="custom-file-label" for "path_image">Choose file</label>
+                            <label class="custom-file-label" for = "path_image">Choose file</label>
                         </div>
                     </div>
                 </div>
