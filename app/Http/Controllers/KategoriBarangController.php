@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KategoriServis;
+use App\Models\KategoriBarang;
 use Illuminate\Http\Request;
 
-class KategoriServisController extends Controller
+class KategoriBarangController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $kategoriServis = KategoriServis::latest()->get();
-        return view('kategori.servisindex', compact('kategoriServis'));
+        $kategoriBarang = KategoriBarang::latest()->get();
+        return view('kategori.barangindex', compact('kategoriBarang'));
     }
 
     /**
@@ -21,7 +21,7 @@ class KategoriServisController extends Controller
      */
     public function create()
     {
-        return view('kategori.tambahservis');
+        return view('kategori.tambahbarang');
     }
 
     /**
@@ -29,10 +29,9 @@ class KategoriServisController extends Controller
      */
     public function store(Request $request)
     {
-
         // Validasi
         $request->validate([
-            'nama' => 'required|string|max:20|unique:kategoriservis,nama_kategori',
+            'nama' => 'required|string|max:20|unique:kategoribarang,nama_kategori',
         ], [
             'nama.required' => 'Kolom nama harus diisi.',
             'nama.unique' => 'Nama kategori sudah ada.',
@@ -43,11 +42,19 @@ class KategoriServisController extends Controller
         $namaKategori = htmlspecialchars($request->input('nama'), ENT_QUOTES, 'UTF-8');
 
         // Buat kategori baru
-        KategoriServis::create([
+        KategoriBarang::create([
             'nama_kategori' => $namaKategori
         ]);
 
-        return redirect()->route('kservis.index')->with('success', 'Kategori servis berhasil ditambahkan.');
+        return redirect()->route('kbarang.index')->with('success', 'Kategori barang berhasil ditambahkan.');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
     }
 
     /**
@@ -55,8 +62,8 @@ class KategoriServisController extends Controller
      */
     public function edit(string $id)
     {
-        $kategoriServis = KategoriServis::findOrFail($id);
-        return view('kategori.editservis', compact('kategoriServis'));
+        $kategoriBarang = KategoriBarang::findOrFail($id);
+        return view('kategori.editbarang', compact('kategoriBarang'));
     }
 
     /**
@@ -64,10 +71,9 @@ class KategoriServisController extends Controller
      */
     public function update(Request $request, string $id)
     {
-
         // Validasi
         $request->validate([
-            'nama' => 'required|string|max:20|unique:kategoriservis,nama_kategori,'.$id,
+            'nama' => 'required|string|max:20|unique:kategoribarang,nama_kategori,'.$id,
         ], [
             'nama.required' => 'Kolom nama harus diisi.',
             'nama.unique' => 'Nama kategori sudah ada.',
@@ -78,14 +84,14 @@ class KategoriServisController extends Controller
         $namaKategori = htmlspecialchars($request->input('nama'), ENT_QUOTES, 'UTF-8');
 
         // Dapatkan kategoriServis berdasarkan ID
-        $kategoriServis = KategoriServis::findOrFail($id);
+        $kategoriBarang = KategoriBarang::findOrFail($id);
 
         // Update kategoriServis
-        $kategoriServis->update([
+        $kategoriBarang->update([
             'nama_kategori' => $namaKategori
         ]);
 
-        return redirect()->route('kbarang.index')->with('success', 'Data berhasil diubah!');
+        return redirect()->route('kservis.index')->with('success', 'Data berhasil diubah!');
     }
 
     /**
@@ -93,8 +99,8 @@ class KategoriServisController extends Controller
      */
     public function destroy(string $id)
     {
-        $kategoriServis = KategoriServis::findOrFail($id);
-        $kategoriServis->delete();
-        return redirect()->route('kservis.index')->with('success', 'Data berhasil dihapus!');
+        $kategoriBarang = KategoriBarang::findOrFail($id);
+        $kategoriBarang->delete();
+        return redirect()->route('kbarang.index')->with('success', 'Data berhasil dihapus!');
     }
 }

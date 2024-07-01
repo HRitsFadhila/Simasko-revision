@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\{
     DashboardController,
+    KategoriBarangController,
     KategoriServisController,
     PenggunaController
 };
@@ -23,7 +24,9 @@ Route::group([
         'middleware' => 'role:admin'
     ], function () {
         Route::resource('/kservis', KategoriServisController::class);
+        Route::resource('/kbarang', KategoriBarangController::class);
         Route::resource('/pengguna', PenggunaController::class);
+
     });
 
     Route::group([

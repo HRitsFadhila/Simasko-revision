@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Kategori Servis')
+@section('title', 'Kategori Barang')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active">Kategori</a></li>
@@ -11,7 +11,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
-        <a href="{{ route('kservis.create') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</a>
+        <a href="{{ route('kbarang.create') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</a>
       </div>
       <div class="card-body">
         <table class="table table-bordered table-hover table-striped">
@@ -21,14 +21,14 @@
             <th width = "15%" class="text-center"><i class="fas fa-cog"></i></th>
           </thead>
           <tbody>
-            @foreach ($kategoriServis as $key => $item)
+            @foreach ($kategoriBarang as $key => $item)
                 <tr>
                   <td>{{ $key + 1 }}</td>
                   <td>{{ $item->nama_kategori }}</td>
                   <td class="text-center">
-                    <a href="{{ route('kservis.edit', $item->id) }}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
+                    <a href="{{ route('kbarang.edit', $item->id) }}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
                     <!-- Tombol untuk menampilkan modal -->
-                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDeleteModal" data-url="{{ route('kservis.destroy', $item->id) }}">
+                    <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDeleteModal" data-url="{{ route('kbarang.destroy', $item->id) }}">
                         <i class="fas fa-trash"></i>
                     </button>
                 </td>
@@ -41,7 +41,7 @@
   </div>
 </div>
 
-@include('kategori.modal-deleteservis')
+@include('kategori.modal-deletebarang')
 
 @if(session('success'))
   <script>
