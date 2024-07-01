@@ -34,6 +34,15 @@
               </p>
             </a>
           </li>
+          {{-- Menu Supplier --}}
+          <li class="nav-item">
+            <a href="{{ route('supplier.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-dolly-flatbed"></i>
+              <p>
+                Supplier
+              </p>
+            </a>
+          </li>
 
           {{-- Menu Gudang --}}
           <li class="nav-item">

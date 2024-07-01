@@ -3,7 +3,7 @@
 @section('title', 'Edit Kategori Barang ')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item"><a href="{{ route('kservis.index') }}">Kategori</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('kbarang.index') }}">Kategori</a></li>
     <li class="breadcrumb-item active">Edit</li>
 @endsection
 

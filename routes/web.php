@@ -4,7 +4,8 @@ use App\Http\Controllers\{
     DashboardController,
     KategoriBarangController,
     KategoriServisController,
-    PenggunaController
+    PenggunaController,
+    SupplierController
 };
 use App\Models\KategoriServis;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,8 @@ Route::group([
         Route::resource('/kservis', KategoriServisController::class);
         Route::resource('/kbarang', KategoriBarangController::class);
         Route::resource('/pengguna', PenggunaController::class);
+        Route::resource('/supplier', SupplierController::class);
+        
 
     });
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -12,10 +13,14 @@ class DashboardController extends Controller
         $user = auth()->user();
         
         if ($user && $user->id_role === 1) {
-            return view('dashboard');
+            $jumlahSupplier = Supplier::count(); // Menghitung jumlah supplier
+            return view('dashboard', compact('jumlahSupplier'));
         }
 
         // Tambahkan logika lainnya jika pengguna bukan admin
-        return view('dashboard2');
+        $jumlahSupplier = Supplier::count();
+        return view('dashboard2', compact('jumlahSupplier'));
+
+        
     }
 }
