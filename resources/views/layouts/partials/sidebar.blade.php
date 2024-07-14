@@ -37,9 +37,19 @@
           {{-- Menu Supplier --}}
           <li class="nav-item">
             <a href="{{ route('supplier.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-dolly-flatbed"></i>
+              <i class="nav-icon fas fa-shipping-fast"></i>
               <p>
                 Supplier
+              </p>
+            </a>
+          </li>
+
+          {{-- Menu Daftar Barang --}}
+          <li class="nav-item">
+            <a href="{{ route('dbarang.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-dolly-flatbed"></i>
+              <p>
+                Daftar Barang
               </p>
             </a>
           </li>
@@ -55,13 +65,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('bmasuk.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Barang Masuk</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('bkeluar.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Barang Keluar</p>
                 </a>
@@ -151,12 +161,12 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Barang</p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

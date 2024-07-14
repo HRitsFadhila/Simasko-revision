@@ -18,7 +18,7 @@
           <p>Supplier</p>
         </div>
         <div class="icon">
-          <i class="ion ion-bag"></i>
+          <i class="fas fa-truck"></i>
         </div>
         <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
       </div>
@@ -28,12 +28,12 @@
       <!-- small box -->
       <div class="small-box bg-success">
         <div class="inner">
-          <h3>53<sup style="font-size: 20px">%</sup></h3>
+          <h3>{{ $totalJumlahSemuaBarang }}</h3>
 
-          <p>Barang Keluar</p>
+          <p>Stok Barang</p>
         </div>
         <div class="icon">
-          <i class="ion ion-stats-bars"></i>
+          <i class="fas fa-boxes"></i>
         </div>
         <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
       </div>
@@ -45,7 +45,7 @@
         <div class="inner">
           <h3>44</h3>
 
-          <p>Servis Masuk</p>
+          <p>Karyawan</p>
         </div>
         <div class="icon">
           <i class="ion ion-person-add"></i>
@@ -60,10 +60,10 @@
         <div class="inner">
           <h3>65</h3>
 
-          <p>Servis Keluar</p>
+          <p>Servis</p>
         </div>
         <div class="icon">
-          <i class="ion ion-pie-graph"></i>
+          <i class="fas fa-screwdriver"></i>
         </div>
         <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
       </div>
@@ -76,7 +76,7 @@
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
       <!-- Custom tabs (Charts with tabs)-->
-      <div class="card">
+      {{-- <div class="card">
         <div class="card-header">
           <h3 class="card-title">
             <i class="fas fa-chart-pie mr-1"></i>
@@ -105,7 +105,7 @@
             </div>
           </div>
         </div><!-- /.card-body -->
-      </div>
+      </div> --}}
       <!-- /.card -->
 
 

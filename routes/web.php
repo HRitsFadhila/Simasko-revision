@@ -5,8 +5,12 @@ use App\Http\Controllers\{
     KategoriBarangController,
     KategoriServisController,
     PenggunaController,
-    SupplierController
+    SupplierController,
+    DaftarBarangController,
+    BarangMasukController,
+    BarangKeluarController
 };
+use App\Models\DaftarBarang;
 use App\Models\KategoriServis;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -28,7 +32,10 @@ Route::group([
         Route::resource('/kbarang', KategoriBarangController::class);
         Route::resource('/pengguna', PenggunaController::class);
         Route::resource('/supplier', SupplierController::class);
-        
+        Route::resource('/dbarang', DaftarBarangController::class);
+        Route::resource('/bmasuk', BarangMasukController::class);
+        Route::resource('/bkeluar', BarangKeluarController::class);
+
 
     });
 
