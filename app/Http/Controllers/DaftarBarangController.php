@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\DaftarBarang;
 use App\Models\KategoriBarang;
 use App\Models\Supplier;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class DaftarBarangController extends Controller
 {
@@ -146,5 +148,14 @@ class DaftarBarangController extends Controller
         // Redirect ke halaman daftar barang atau sesuai kebutuhan aplikasi Anda
         return redirect()->route('dbarang.index')->with('success', 'Data barang berhasil dihapus.');
 
+    }
+
+    public function generatePDF()
+    {
+    $daftarBarang = DaftarBarang::all();
+
+    $pdf = Pdf::loadView('dbarang.pdf', compact('daftarBarang'));
+
+    return $pdf->download('daftar_barang.pdf');
     }
 }

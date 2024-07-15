@@ -20,7 +20,7 @@
         <div class="icon">
           <i class="fas fa-truck"></i>
         </div>
-        <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
+        <a href="{{ route('supplier.index') }}" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -35,7 +35,7 @@
         <div class="icon">
           <i class="fas fa-boxes"></i>
         </div>
-        <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
+        <a href="{{ route('dbarang.index') }}" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
       </div>
     </div>
     <!-- ./col -->
@@ -43,14 +43,14 @@
       <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          <h3>44</h3>
+          <h3>{{ $jumlahKaryawan }}</h3>
 
           <p>Karyawan</p>
         </div>
         <div class="icon">
           <i class="ion ion-person-add"></i>
         </div>
-        <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
+        <a href="{{ route('karyawan.index') }}" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
       </div>
     </div>
     <!-- ./col -->

@@ -116,7 +116,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('karyawan.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Karyawan</p>
                 </a>
@@ -161,12 +161,12 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              {{-- <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item">
+                <a href="{{ route('dbarang.pdf') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Barang</p>
                 </a>
-              </li> --}}
+              </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -174,7 +174,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('karyawan.print') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Karyawan</p>
                 </a>

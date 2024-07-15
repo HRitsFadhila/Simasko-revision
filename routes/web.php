@@ -4,6 +4,7 @@ use App\Http\Controllers\{
     DashboardController,
     KategoriBarangController,
     KategoriServisController,
+    KaryawanController,
     PenggunaController,
     SupplierController,
     DaftarBarangController,
@@ -33,8 +34,14 @@ Route::group([
         Route::resource('/pengguna', PenggunaController::class);
         Route::resource('/supplier', SupplierController::class);
         Route::resource('/dbarang', DaftarBarangController::class);
+        Route::get('/daftarbarang/pdf', [DaftarBarangController::class, 'generatePDF'])->name('dbarang.pdf');
         Route::resource('/bmasuk', BarangMasukController::class);
         Route::resource('/bkeluar', BarangKeluarController::class);
+        Route::resource('/karyawan', KaryawanController::class)->except(['show']);
+        Route::get('/karyawan/details', [KaryawanController::class, 'details'])->name('karyawan.details');
+        Route::delete('/karyawan/{id}', [KaryawanController::class, 'destroy'])->name('karyawan.delete');
+        Route::get('/karyawan/{karyawan}/edit', [KaryawanController::class, 'edit'])->name('karyawan.edit');
+        Route::get('karyawan/print', [KaryawanController::class, 'printEmployees'])->name('karyawan.print');
 
 
     });
