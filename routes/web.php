@@ -49,6 +49,13 @@ Route::group([
     Route::group([
         'middleware' => 'role:karyawan'
     ], function () {
-        //
+        Route::resource('/kservis', KategoriServisController::class);
+        Route::resource('/kbarang', KategoriBarangController::class);
+        Route::resource('/pengguna', PenggunaController::class);
+        Route::resource('/supplier', SupplierController::class);
+        Route::resource('/dbarang', DaftarBarangController::class);
+        Route::get('/daftarbarang/pdf', [DaftarBarangController::class, 'generatePDF'])->name('dbarang.pdf');
+        Route::resource('/bmasuk', BarangMasukController::class);
+        Route::resource('/bkeluar', BarangKeluarController::class);
     });
 });

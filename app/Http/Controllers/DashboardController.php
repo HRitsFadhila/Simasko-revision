@@ -26,7 +26,7 @@ class DashboardController extends Controller
 
         // Tambahkan logika lainnya jika pengguna bukan admin
         $jumlahSupplier = Supplier::count();
-        return view('dashboard2', compact('jumlahSupplier'));
+        return view('dashboard2', compact('jumlahSupplier', 'totalJumlahSemuaBarang',));
 
         
     }

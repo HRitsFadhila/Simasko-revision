@@ -9,61 +9,46 @@
 @section('content')
     <!-- Small boxes (Stat box) -->
 <div class="row">
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-4 col-6">
       <!-- small box -->
       <div class="small-box bg-info">
         <div class="inner">
-          <h3>150</h3>
+          <h3>{{ $jumlahSupplier }}</h3>
 
-          <p>Barang Masuk</p>
+          <p>Supplier</p>
         </div>
         <div class="icon">
-          <i class="ion ion-bag"></i>
+          <i class="fas fa-truck"></i>
         </div>
-        <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
+        <a href="{{ route('supplier.index') }}" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
       </div>
     </div>
     <!-- ./col -->
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-4 col-6">
       <!-- small box -->
       <div class="small-box bg-success">
         <div class="inner">
-          <h3>53<sup style="font-size: 20px">%</sup></h3>
+          <h3>{{ $totalJumlahSemuaBarang }}</h3>
 
-          <p>Barang Keluar</p>
+          <p>Stok Barang</p>
         </div>
         <div class="icon">
-          <i class="ion ion-stats-bars"></i>
+          <i class="fas fa-boxes"></i>
         </div>
-        <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
+        <a href="{{ route('dbarang.index') }}" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
       </div>
     </div>
     <!-- ./col -->
-    <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <div class="small-box bg-warning">
-        <div class="inner">
-          <h3>44</h3>
-
-          <p>Servis Masuk</p>
-        </div>
-        <div class="icon">
-          <i class="ion ion-person-add"></i>
-        </div>
-        <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
-      </div>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-4 col-6">
       <!-- small box -->
       <div class="small-box bg-danger">
         <div class="inner">
           <h3>65</h3>
 
-          <p>Servis Keluar</p>
+          <p>Servis</p>
         </div>
         <div class="icon">
-          <i class="ion ion-pie-graph"></i>
+          <i class="fas fa-screwdriver"></i>
         </div>
         <a href="#" class="small-box-footer"> <i class="fas fa-angle-up"></i></a>
       </div>
@@ -71,12 +56,21 @@
     <!-- ./col -->
 </div>
 <!-- /.row -->
+<!-- Main row -->
+<div class="row">
+    <!-- Left col -->
+    <section class="col-lg-12 connectedSortable">
+    
 
+
+      <!-- /.card -->
+    </section>
+    <!-- /.Left col -->
+    
+</div>
+  <!-- /.row (main row) -->
 @endsection
 
 @push('script')
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('/AdminLTE/dist/js/demo.js') }}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('/AdminLTE/dist/js/pages/dashboard.js') }}"></script>
+
 @endpush
